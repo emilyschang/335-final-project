@@ -2,21 +2,11 @@ let fs = require('fs');
 let http = require('http');
 let path = require("path");
 let express = require("express");
-
-require("dotenv").config({ path: path.resolve(__dirname, '.env') }) 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
-const userName = process.env.MONGO_DB_USERNAME;
-const password = process.env.MONGO_DB_PASSWORD;
-const db = process.env.MONGO_DB_NAME;
-const collection = process.env.MONGO_COLLECTION;
-
-const databaseAndCollection = {db, collection};
+let mongoUtils = require("mongoUtils.js");
 
 let app = express();
 let bodyParser = require("body-parser");
 const e = require('express');
-
 
 process.stdin.setEncoding("utf8");
 
@@ -26,7 +16,6 @@ if (process.argv.length != 3) {
 }
 
 let portNumber = process.argv[2];
-
 
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
@@ -46,21 +35,6 @@ app.post("/processApplication", function (request, response) {
     apply(variables);
     response.render("appConfirmation", variables);
 });
-
-async function apply(variables) {
-    const uri = `mongodb+srv://${userName}:${password}@cluster0.rm5sq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    try {
-        await client.connect();
-        let p = {name: variables.name, email: variables.email, gpa: variables.gpa, background: variables.background};
-        await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(p);
-        
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
 
 
 

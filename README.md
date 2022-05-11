@@ -1,2 +1,2 @@
 # 335-final-project
-Emily Chang (echang51), Priya Kalla, Katherine Wang, Richard Zhou (rzhou564)
+Emily Chang (echang51), Priya Kalla (pkalla), Katherine Wang (kathwang), Richard Zhou (rzhou564)

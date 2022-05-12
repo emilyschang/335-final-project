@@ -31,23 +31,23 @@
 	<form action= <%- urlForm %> method="post">
 		<fieldset>
 			<legend>Personal Information</legend>
-			<label><strong>First Name: </strong><input type="text" name="fname" required/></label>&nbsp;&nbsp;
-			<label><strong>Last Name: </strong><input type="text" name="lname" required/></label>
+			<label><strong>First Name: </strong>&nbsp;<input type="text" name="fname" required/></label>&nbsp;&nbsp;
+			<label><strong>Last Name: </strong>&nbsp;<input type="text" name="lname" required/></label>
 			<br>
 			<br>
-			<label><strong>Email Address:</strong><input type="email" name="email" required></label> 
+			<label><strong>Email Address: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label> 
 			<br>
 			<br>
 			<span id="phnum">
 
-                <strong>Phone:</strong> <input type="text" id="phoneFirstPart" name="phoneFirstPart" required maxlength="3" />
+                <strong>Phone:</strong>&nbsp;&nbsp;<input type="text" id="phoneFirstPart" name="phoneFirstPart" required maxlength="3" />
                 - <input type="text" id="phoneSecondPart" name="phoneSecondPart" required maxlength="3" />
                 - <input type="text" id="phoneThirdPart" name="phoneThirdPart" required maxlength="4" />
 
             </span>
 			<br>
 			<br>
-			<label><strong>State: </strong><input type="text" name="state" required></label> 
+			<label><strong>State: </strong>&nbsp;&nbsp;<input type="text" name="state" required></label> 
 			<br>
 		</fieldset>
 		<br>
@@ -57,12 +57,19 @@
 			<br>
 			<br>
 			<strong>Why are you best suited to be a dog owner?</strong><br>
-			<textarea rows="5" cols="80" name="background"></textarea></label>
+			<textarea rows="15" cols="80" name="background"></textarea></label>
 		</fieldset>
-
-		<br>
-		<input type="reset" />
-		<input id = "sub" type="submit" value="Submit Application"/>
+		<br><br><br>
+		<div id ="buttons">
+		<input class = "butt" type="submit" value="Submit Application"/>
+		&nbsp;&nbsp;
+		<input class="butt" type="reset" value="Clear"/>
+		</div>
+		<br><br><br>
+		<div id="footer">
+        
+		</div>
+		
 	</form>
 </body>
 

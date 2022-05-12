@@ -129,4 +129,40 @@ legend {
   font-size: 1.8rem;
   font-family: "Bayon", sans-serif;
   letter-spacing: 0.3rem;
+  color: #a68f7f;
 }
+
+input {
+    width: 16rem;
+    height: 1.5rem;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    color: #a68f7f;
+    border: 0.4rem #dedbcd double;
+    border-radius: 0.4rem;
+    height: 5rem;
+    width: 15rem;
+    font-size: 1.2rem;
+    outline-width: 0rem;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 0.5rem 0.5rem 0.5rem  #a68f7f;
+  }
+  
+  input[type="reset"] {
+    display: inline-block;
+    color: #a68f7f;
+    border: 0.4rem #dedbcd double;
+    border-radius: 0.4rem;
+    height: 5rem;
+    width: 15rem;
+    outline-width: 0rem;
+    font-size: 1.2rem;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 0.5rem 0.5rem 0.5em #a68f7f;
+  }
+
+  #buttons {
+    text-align: center;
+  }

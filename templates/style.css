@@ -1,121 +1,132 @@
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 body {
-    background-color: #dedbcd;
+  background-color: #dedbcd;
 }
+
 
 #nav {
-    background-color: #dedbcd;
-    padding-right: 1.5rem;
+  background-color: #dedbcd;
+  padding-right: 1.5rem;
 }
 
-
 #nav h1 {
-    font-family: 'Bayon', sans-serif;
-    font-size: 4.3rem;
-    padding-left: 1rem;
-    display: inline-block;
-    margin: auto;
-    
+  font-family: "Bayon", sans-serif;
+  font-size: 4.3rem;
+  padding-left: 1rem;
+  display: inline-block;
+  margin: auto;
 }
 
 #nav ul {
-    list-style-type: none;
-    margin: auto;
-    overflow: hidden;
-    display: inline;
-
-  }
-  
-  #nav li {
-    float: right;
-    
-  }
-  
-  #nav li a {
-    color: #6b7e4e;
-    text-align: center;
-    padding: 2rem 0.4rem;
-    padding-right: 1.5rem;
-    text-decoration: none;
-    font-size: 2.0rem;
-    font-family: 'Bayon', sans-serif;
-    margin:auto;
-    display: inline-block;
-  }
-  
-  #nav li a:hover {
-    color: #a68f7f;
-  }
-
-  hr {
-    border-top: 0.2rem solid black;
-  }
-
-  h2 {
-      text-align: center;
-      font-family: 'Bayon', sans-serif;
-      /* font-family: 'Nunito', sans-serif; */
-      font-size: 3.5rem;
-      font-weight: lighter;
-
-  }
-
-  img {
-      display: block;
-      margin: auto;
-      height: 30rem;
-  }
-
-  #adoptform {
-    height: 15rem;
-    display: block;
-    margin: auto;
-    padding: 0rem;
-
-  }
-
-  h3 {
-      text-align: center;
-      font-family: 'Bayon', sans-serif;
-      font-size: 3.0rem;
-      padding: 0rem;
-      margin: 0rem;
-      
-  }
-
-  p {
-    font-family: 'Nunito', sans-serif;
-    font-size: 2.0rem;
-    font-weight: lighter;
-    text-align: center;
-  }
-
-  #footer {
-      background-color: #6b7e4e;
-      height: 8rem;
-      margin: 0rem;
-      padding: 0rem;
-  }
-
-fieldset {
-    border-radius: .75rem;
-    border-width: 0.25rem;
-    border-style: solid;
-    border-color: #a68f7f;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
-    color: black;
- }
-
- #phnum input[type="text"]{
-    width: 2.4em;
+  list-style-type: none;
+  margin: auto;
+  overflow: hidden;
+  display: inline;
 }
 
- legend {
-     font-size: 1.8rem;
-     font-family: 'Bayon', sans-serif;
-     letter-spacing: 0.3rem;
- }
+#nav li {
+  float: right;
+}
+
+#nav li a {
+  color: #6b7e4e;
+  text-align: center;
+  padding: 2rem 0.4rem;
+  padding-right: 1.5rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "Bayon", sans-serif;
+  margin: auto;
+  display: inline-block;
+}
+
+#nav li a:hover {
+  color: #a68f7f;
+}
+
+ #outer{
+    display: block;
+    position: relative;
+  }
+  
+  #outer::before {
+    content: "";
+    background: url(paws.jpg);
+    opacity: 0.1;
+    top: -1rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+hr {
+  border-top: 0.2rem solid black;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Bayon", sans-serif;
+  /* font-family: 'Nunito', sans-serif; */
+  font-size: 3.5rem;
+  font-weight: lighter;
+}
+
+img {
+  display: block;
+  margin: auto;
+  height: 30rem;
+}
+
+#adoptform {
+  height: 15rem;
+  display: block;
+  margin: auto;
+  padding: 0rem;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Bayon", sans-serif;
+  font-size: 3rem;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+#footer {
+  background-color: #6b7e4e;
+  height: 8rem;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+fieldset {
+  border-radius: 0.75rem;
+  border-width: 0.25rem;
+  border-style: solid;
+  border-color: #a68f7f;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  color: black;
+}
+
+#phnum input[type="text"] {
+  width: 2.4em;
+}
+
+legend {
+  font-size: 1.8rem;
+  font-family: "Bayon", sans-serif;
+  letter-spacing: 0.3rem;
+}

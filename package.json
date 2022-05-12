@@ -1,0 +1,25 @@
+{
+  "name": "335-final-project",
+  "version": "1.0.0",
+  "description": "335 Final Project",
+  "main": "adoptionServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyschang/335-final-project.git"
+  },
+  "author": "Priya Kalla, Katherine Wang, Emily Chang, Richard Zhou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilyschang/335-final-project/issues"
+  },
+  "homepage": "https://github.com/emilyschang/335-final-project#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0"
+  }
+}

@@ -25,17 +25,29 @@
     </div>
     <hr>
 	<br>
-	<h2>Here is your receipt!</h2>
-        <strong>Name: </strong><%- fname %> <%- lname %><br>
-        <strong>Email Address: </strong><%- email %><br>
+	<h3>Here is your receipt!</h3>
+        <p>
+        <strong>Name: </strong><%- fname %> <%- lname %>
+        <br><br>
+        <strong>Email Address: </strong><%- email %>
+        <br><br>
         <strong>Phone: </strong> <%- phoneFirstPart %> - <%- phoneSecondPart %> - <%- phoneThirdPart %>
-		<strong>State: </strong><%- state %><br>
-        <strong>Potential Dog Name: </strong><%- dname %><br>
-        <strong>Why are you best suited to be a dog owner? </strong><br>
+		<br><br>
+        <strong>State: </strong><%- state %>
+        <br><br>
+        <strong>Potential Dog Name: </strong><%- dname %>
+        <br><br>
+        <strong>Why are you best suited to be a dog owner? </strong>
+        <br>
         <%- background %>
+        </p>
         
         <hr>
-        <strong>Task completed at <%- datetime%></strong>
+        <br> 
+        <div id ="endform"><strong>Task completed at <%- datetime%></strong></div>
+        <br>
+        <br>
+        <br>
 </body>
 
 </html>

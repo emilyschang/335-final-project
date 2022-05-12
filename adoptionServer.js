@@ -43,16 +43,53 @@ app.get("/adopt", function (request, response) {
   response.render("adopt", variables);
 });
 
-
 app.use(bodyParser.urlencoded({extended:false}));
-app.post("/processApplication", function (request, response) {
-    let {} = request.body;
+
+
+app.post("/processAdopt", function (request, response) {
+  let {
+    fname, lname, email, 
+    phoneFirstPart, phoneSecondPart, phoneThirdPart,
+    state, dname, background} = request.body;
     let variables = {
-        
+        fname: fname, 
+        lname: lname,
+        email: email,
+        phoneFirstPart: phoneFirstPart, 
+        phoneSecondPart: phoneSecondPart, 
+        phoneThirdPart: phoneThirdPart,
+        state: state, 
+        dname: dname,
+        background: background,
+        datetime: new Date()
     }
-    apply(variables);
-    response.render("appConfirmation", variables);
+    adopt(variables)
+    response.render("adoptConfirm", variables);
 });
+
+async function adopt(variables) {
+  const uri = `mongodb+srv://${userName}:${password}@cluster0.rm5sq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+  try {
+      await client.connect();
+      let p = {
+        fname: variables.fname,
+        lname: variables.lname,
+        dname: variables.dname,    
+        email: variables.email,
+        state: variables.state,
+        phoneFirstPart: variables.phoneFirstPart, 
+        phoneSecondPart: variables.phoneSecondPart, 
+        phoneThirdPart: variables.phoneThirdPart, 
+        background: variables.background};
+      await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(p);
+      
+  } catch (e) {
+      console.error(e);
+  } finally {
+      await client.close();
+  }
+}
 
 
 

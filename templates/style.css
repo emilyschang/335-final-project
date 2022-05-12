@@ -80,6 +80,7 @@ img {
   display: block;
   margin: auto;
   height: 30rem;
+  opacity: 0.9;
 }
 
 #adoptform {
@@ -165,4 +166,9 @@ input[type="submit"] {
 
   #buttons {
     text-align: center;
+  }
+
+  #endform {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
   }

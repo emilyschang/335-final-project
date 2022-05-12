@@ -21,18 +21,22 @@
             <li><a href="/about">ABOUT</a></li>
             <li><a href="/">HOME</a></li>    
         </ul>
-  
     </div>
     <hr>
 	<br>
+	
+	<img id="adoptform" src="adoptdog.jpeg" alt="adoptmedogs">
+	
 	<h3>Apply to Adopt</h3>
 	<form action= <%- urlForm %> method="post">
 		<fieldset>
 			<legend>Personal Information</legend>
-			<label><strong>First Name: </strong><input type="text" name="fname" required/></label>
+			<label><strong>First Name: </strong><input type="text" name="fname" required/></label>&nbsp;&nbsp;
 			<label><strong>Last Name: </strong><input type="text" name="lname" required/></label>
 			<br>
+			<br>
 			<label><strong>Email Address:</strong><input type="email" name="email" required></label> 
+			<br>
 			<br>
 			<span id="phnum">
 
@@ -41,13 +45,17 @@
                 - <input type="text" id="phoneThirdPart" name="phoneThirdPart" required maxlength="4" />
 
             </span>
+			<br>
+			<br>
 			<label><strong>State: </strong><input type="text" name="state" required></label> 
 			<br>
 		</fieldset>
-
+		<br>
 		<fieldset>
 			<legend>Additional Information</legend>
 			<label><strong>Potential Dog Name: </strong><input type="text" name="dname" required/></label>
+			<br>
+			<br>
 			<strong>Why are you best suited to be a dog owner?</strong><br>
 			<textarea rows="5" cols="80" name="background"></textarea></label>
 		</fieldset>
@@ -55,8 +63,6 @@
 		<br>
 		<input type="reset" />
 		<input id = "sub" type="submit" value="Submit Application"/>
-		<hr>
-		<a href="/">HOME</a></li>
 	</form>
 </body>
 

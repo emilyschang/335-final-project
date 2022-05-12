@@ -3,55 +3,12 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Adoption Status</title>
+	<title>Adoption Form</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-	<div id="nav">
-        <h1>ADOPT A DOG</h1>
-        
-        <ul>
-            <li><a href="status">STATUS</a></li>
-            <li><a href="/adopt">ADOPT</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li><a href="/">HOME</a></li>    
-        </ul>
-  
-    </div>
-    <hr>
-	<br>
-	<h2>Apply to Adopt</h2>
-	<form action= <%- urlForm %> method="post">
-		<fieldset>
-			<legend>Personal Information</legend>
-			<label><strong>Name: </strong><input type="text" name="name"/></label>
-			<br>
-			<label><strong>Email Address:</strong><input type="email" name="email"></label> 
-			<br>
-			<span id="phnum">
-
-                <strong>Phone:</strong> <input type="text" id="phoneFirstPart" name="phoneFirstPart" required maxlength="3" />
-                - <input type="text" id="phoneSecondPart" name="phoneSecondPart" required maxlength="3" />
-                - <input type="text" id="phoneThirdPart" name="phoneThirdPart" required maxlength="4" />
-
-            </span>
-			<label><strong>State: </strong><input type="text" name="state"></label> 
-			<br>
-		</fieldset>
-
-		<fieldset>
-			<legend>Additional Information</legend>
-			<strong>Why are you best suited to be a dog owner?</strong><br>
-			<textarea rows="5" cols="80" name="background"></textarea></label>
-		</fieldset>
-
-		<br>
-		<input type="reset" />
-		<input id = "sub" type="submit" value="Submit Application"/>
-		<hr>
-		<a href="/">HOME</a></li>
-	</form>
+	
 </body>
 
 </html>

@@ -10,7 +10,6 @@ const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
 const db = process.env.MONGO_DB_NAME;
 const collection = process.env.MONGO_COLLECTION;
-
 const databaseAndCollection = {db, collection};
 
 let app = express();
@@ -20,7 +19,6 @@ const e = require('express');
 app.use(express.static("templates"));
 
 process.stdin.setEncoding("utf8");
-
 if (process.argv.length != 3) {
   process.stdout.write(`Usage adoptionServer.js`);
   process.exit(1);
@@ -30,6 +28,7 @@ let portNumber = process.argv[2];
 
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
+
 
 //home
 app.get("/", function (request, response) {

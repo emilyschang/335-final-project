@@ -4,6 +4,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Adoption Form</title>
+	<link
+      href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,13 +25,14 @@
     </div>
     <hr>
 	<br>
-	<h2>Apply to Adopt</h2>
+	<h3>Apply to Adopt</h3>
 	<form action= <%- urlForm %> method="post">
 		<fieldset>
 			<legend>Personal Information</legend>
-			<label><strong>Name: </strong><input type="text" name="name"/></label>
+			<label><strong>First Name: </strong><input type="text" name="fname" required/></label>
+			<label><strong>Last Name: </strong><input type="text" name="lname" required/></label>
 			<br>
-			<label><strong>Email Address:</strong><input type="email" name="email"></label> 
+			<label><strong>Email Address:</strong><input type="email" name="email" required></label> 
 			<br>
 			<span id="phnum">
 
@@ -36,12 +41,13 @@
                 - <input type="text" id="phoneThirdPart" name="phoneThirdPart" required maxlength="4" />
 
             </span>
-			<label><strong>State: </strong><input type="text" name="state"></label> 
+			<label><strong>State: </strong><input type="text" name="state" required></label> 
 			<br>
 		</fieldset>
 
 		<fieldset>
 			<legend>Additional Information</legend>
+			<label><strong>Potential Dog Name: </strong><input type="text" name="dname" required/></label>
 			<strong>Why are you best suited to be a dog owner?</strong><br>
 			<textarea rows="5" cols="80" name="background"></textarea></label>
 		</fieldset>

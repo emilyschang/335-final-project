@@ -36,6 +36,13 @@ app.get("/", function (request, response) {
     response.render("index");
 });
 
+app.get("/adopt", function (request, response) {
+  let variables = {
+      urlForm: "http://localhost:" +portNumber + "/processAdopt"
+  }
+  response.render("adopt", variables);
+});
+
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.post("/processApplication", function (request, response) {

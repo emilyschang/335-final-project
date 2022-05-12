@@ -2,6 +2,7 @@ let fs = require('fs');
 let http = require('http');
 let path = require("path");
 let express = require("express");
+let mongoUtils = require("./mongoUtils.js");
 
 require("dotenv").config({ path: path.resolve(__dirname, '.env') }) 
 const { MongoClient, ServerApiVersion } = require('mongodb');

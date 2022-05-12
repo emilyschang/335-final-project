@@ -9,15 +9,12 @@ body {
 #nav {
     background-color: #dedbcd;
     padding-right: 1.5rem;
-    
-    
-    
 }
 
 
 #nav h1 {
     font-family: 'Bayon', sans-serif;
-    font-size: 4rem;
+    font-size: 4.3rem;
     padding-left: 1rem;
     display: inline-block;
     margin: auto;
@@ -38,13 +35,12 @@ body {
   }
   
   #nav li a {
-    /* display: block; */
     color: #6b7e4e;
     text-align: center;
     padding: 2rem 0.4rem;
     padding-right: 1.5rem;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     font-family: 'Bayon', sans-serif;
     margin:auto;
     display: inline-block;
@@ -56,6 +52,35 @@ body {
 
   hr {
     border-top: 0.2rem solid black;
+  }
+
+  h2 {
+      text-align: center;
+      font-family: 'Bayon', sans-serif;
+      /* font-family: 'Nunito', sans-serif; */
+      font-size: 3.5rem;
+      font-weight: lighter;
+
+  }
+
+  img {
+      display: block;
+      margin: auto;
+      height: 35rem;
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.0rem;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  #footer {
+      background-color: #6b7e4e;
+      height: 8rem;
+      margin: 0rem;
+      padding: 0rem;
   }
 
 

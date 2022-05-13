@@ -54,7 +54,8 @@ module.exports = function (app, portNumber) {
             background: background,
             datetime: new Date()
         }
-        adopt(variables)
+        //adopt(variables)
+        mongoUtils.insert(variables);
         response.render("adoptConfirm", variables);
     });
 }

@@ -16,21 +16,15 @@ if (process.argv.length != 3) {
 
 let portNumber = process.argv[2];
 
+// this stuff sets up the routes/templetes
 let app = express();
-let bodyParser = require("body-parser");
-const e = require('express');
+require('./routes.js')(app, portNumber); // the routes have been moved to another server
 
-require('./routes.js')(app);
-app.use(express.static("templates"));
-
-app.set("views", path.resolve(__dirname, "templates"));
-app.set("view engine", "ejs");
-
-//let routes = require("./routes.js"); // this will set up the routes
-
+// run the server
 console.log(`Web server started and running at http://localhost:${portNumber}`);
 http.createServer(app).listen(portNumber);
 
+// terminates the server when stop is typed into the command line
 let prompt = "Stop to shutdown the server: ";
 process.stdout.write(prompt);
 process.stdin.on("readable", function () {

@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 // to save us all some sanity from reading a file that's 2000 lines long, let's use this
 let mongoUtils = require("./mongoUtils.js");
 
-
+// plz get rid of this D:
 require("dotenv").config({ path: path.resolve(__dirname, '.env') }) // :(
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
@@ -17,12 +17,17 @@ const db = process.env.MONGO_DB_NAME;
 const collection = process.env.MONGO_COLLECTION;
 const databaseAndCollection = { db, collection };
 
-module.exports = function (app) {
+module.exports = function (app, portNumber) {
+    app.use(express.static("templates"));
+    app.set("views", path.resolve(__dirname, "templates"));
+    app.set("view engine", "ejs");
+
     //home
     app.get("/", function (request, response) {
         response.render("index");
     });
 
+    // adopt page
     app.get("/adopt", function (request, response) {
         let variables = {
             urlForm: "http://localhost:" + portNumber + "/processAdopt"

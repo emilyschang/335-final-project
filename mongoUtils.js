@@ -15,7 +15,8 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 // inserts a single element ("data") into the database defined by databaseAndCollection
 async function insert(data) {
-    console.log("insert:\n" + data);
+    console.log("insert:");
+    console.log(data);
     try {
         await client.connect();
         await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(data);

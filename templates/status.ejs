@@ -4,11 +4,37 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Adoption Form</title>
-    <link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-	
+	<div id="nav">
+		<h1>Status</h1>
+
+		<ul>
+			<li><a href="status">STATUS</a></li>
+			<li><a href="/adopt">ADOPT</a></li>
+			<li><a href="/about">ABOUT</a></li>
+			<li><a href="/">HOME</a></li>
+		</ul>
+	</div>
+	<hr>
+	<br>
+
+	<h3>Check Adoption Status</h3>
+	<form action="/profile" method="POST">
+		<fieldset>
+			<legend>Lookup by email</legend>
+			<label><strong>Email: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label>
+		</fieldset>
+		<br><br><br>
+		<div id="buttons">
+			<input class="butt" type="submit" value="Submit Application" />
+			&nbsp;&nbsp;
+			<input class="butt" type="reset" value="Clear" />
+		</div>
+	</form>
+
 </body>
 
 </html>

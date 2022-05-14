@@ -62,4 +62,14 @@ module.exports = function (app, portNumber) {
     app.get("/status", function(request, response) {
         response.render("status");
     });
+
+    // profile page
+    app.post("/profile", async function(request, response) {
+        let variables = await mongoUtils.lookup(request.body.email);
+        if (variables == null) { // variables == null
+            response.render("profileNotFound", {email: request.body.email});
+        } else {
+            response.render("profile");
+        }
+    });
 }

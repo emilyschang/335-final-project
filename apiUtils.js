@@ -6,11 +6,9 @@
 const axios = require("axios");
 
 async function getRandomDog() {
-    axios.get("https://dog.ceo/api/breeds/image/random")
-        .then(res => {
-            console.log("Obtained a dog: \n" + res.data);
-            return res;
-        });
+    let res = await axios.get("https://dog.ceo/api/breeds/image/random")
+    console.log("Obtained a dog: \n" + res.data.message);
+    return res.data.message;
 }
 
 module.exports = {getRandomDog};

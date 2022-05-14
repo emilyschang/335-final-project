@@ -55,20 +55,21 @@ async function lookup(email) {
         console.error(e);
     } finally {
         await client.close();
-    } 
+    }
 }
 
 // updates the entry given by targetEmail with newValues
 async function update(targetEmail, newValues) {
-    console.log("update: " + email);
+    console.log("update: " + targetEmail);
     try {
-        let filter = {email : targetEmail};
+        await client.connect();
+        let filter = { email: targetEmail };
         let update = { $set: newValues };
-    
+
         const result = await client.db(databaseAndCollection.db)
-        .collection(databaseAndCollection.collection)
-        .updateOne(filter, update);
-    
+            .collection(databaseAndCollection.collection)
+            .updateOne(filter, update);
+
         console.log(`Documents modified: ${result.modifiedCount}`);
     } catch (e) {
         console.error(e);
@@ -77,4 +78,21 @@ async function update(targetEmail, newValues) {
     }
 }
 
-module.exports = {insert, lookup, update};
+// delete the entry given by targetEmail
+async function remove(targetEmail) {
+    console.log("remove: " + targetEmail);
+    try {
+        await client.connect();
+        let filter = { email: targetEmail };
+        const result = await client.db(databaseAndCollection.db)
+            .collection(databaseAndCollection.collection)
+            .deleteOne(filter);
+        console.log(`Documents deleted ${result.deletedCount}`);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+
+module.exports = { insert, lookup, update, remove };

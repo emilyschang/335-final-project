@@ -65,10 +65,21 @@ module.exports = function (app, portNumber) {
 
     // profile page
     app.post("/profile", async function(request, response) {
-        let variables = await mongoUtils.lookup(request.body.email);
+        let email = request.body.email;
+
+        // check if entry exists
+        let variables = await mongoUtils.lookup(email);
         if (variables == null) { // variables == null
-            response.render("profileNotFound", {email: request.body.email});
+            // render profile not found page
+            response.render("profileNotFound", {email: email});
         } else {
+            // update profile with a new dog
+            let dogImg = await dogApi.getRandomDog();
+            await mongoUtils.update(email, {dogImg: dogImg});
+
+            // get the updated values
+            let variables = await mongoUtils.lookup(email);
+            console.log(variables);
             response.render("profile");
         }
     });

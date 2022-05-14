@@ -57,4 +57,9 @@ module.exports = function (app, portNumber) {
         mongoUtils.insert(variables);
         response.render("adoptConfirm", variables);
     });
+
+    // status page
+    app.get("/status", function(request, response) {
+        response.render("status");
+    });
 }

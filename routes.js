@@ -59,28 +59,50 @@ module.exports = function (app, portNumber) {
     });
 
     // status page
-    app.get("/status", function(request, response) {
+    app.get("/status", function (request, response) {
         response.render("status");
     });
 
     // profile page
-    app.post("/profile", async function(request, response) {
+    app.post("/profile", async function (request, response) {
         let email = request.body.email;
 
         // check if entry exists
         let variables = await mongoUtils.lookup(email);
         if (variables == null) { // variables == null
             // render profile not found page
-            response.render("profileNotFound", {email: email});
+            response.render("profileNotFound", { email: email });
         } else {
             // update profile with a new dog
             let dogImg = await dogApi.getRandomDog();
-            await mongoUtils.update(email, {dogImg: dogImg});
+            await mongoUtils.update(email, { dogImg: dogImg });
 
             // get the updated values
             let variables = await mongoUtils.lookup(email);
             console.log(variables);
             response.render("profile");
+        }
+    });
+
+    // cancel page
+    app.get("/cancel", function (request, response) {
+        response.render("cancel");
+    });
+
+    // cancel confirmation page
+    app.post("/cancelConfirm", async function (request, response) {
+        let email = request.body.email;
+
+        // check if entry exists
+        let variables = await mongoUtils.remove(email);
+        if (variables == null) { // variables == null
+            // render profile not found page
+            response.render("profileNotFound", { email: email });
+        } else {
+            // get the updated values
+            let variables = await mongoUtils.lookup(email);
+            console.log(variables);
+            response.render("cancelConfirm");
         }
     });
 }

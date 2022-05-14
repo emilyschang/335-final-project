@@ -88,6 +88,7 @@ async function remove(targetEmail) {
             .collection(databaseAndCollection.collection)
             .deleteOne(filter);
         console.log(`Documents deleted ${result.deletedCount}`);
+        return result;
     } catch (e) {
         console.error(e);
     } finally {

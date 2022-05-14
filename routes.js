@@ -94,13 +94,18 @@ module.exports = function (app, portNumber) {
         let email = request.body.email;
 
         // check if entry exists
-        let variables = await mongoUtils.remove(email);
+        let variables = await mongoUtils.lookup(email);
+
         if (variables == null) { // variables == null
             // render profile not found page
-            response.render("profileNotFound", { email: email });
+            response.render("cancelNotFound", { email: email });
         } else {
             // get the updated values
-            let variables = await mongoUtils.lookup(email);
+            result = await mongoUtils.remove(email);
+            variables = {
+                fname: result.fname,
+                lname: result.fname
+            }
             console.log(variables);
             response.render("cancelConfirm");
         }

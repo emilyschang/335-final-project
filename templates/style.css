@@ -47,21 +47,21 @@ body {
   color: #a68f7f;
 }
 
-#outer{
+#outer {
   display: block;
   position: relative;
 }
-  
-  #outer::before {
-    content: "";
-    background: url(paws.jpg);
-    opacity: 0.09;
-    top: -1rem;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-  }
+
+#outer::before {
+  content: "";
+  background: url(paws.jpg);
+  opacity: 0.09;
+  top: -1rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
 
 hr {
   border-top: 0.2rem solid black;
@@ -133,54 +133,80 @@ legend {
 }
 
 input {
-    width: 16rem;
-    height: 1.5rem;
+  width: 16rem;
+  height: 1.5rem;
 }
 
 input[type="submit"] {
-    display: inline-block;
-    color: #a68f7f;
-    border: 0.4rem #dedbcd double;
-    border-radius: 0.4rem;
-    height: 5rem;
-    width: 15rem;
-    font-size: 1.2rem;
-    outline-width: 0rem;
-    font-family: "Nunito", sans-serif;
-    box-shadow: 0.5rem 0.5rem 0.5rem  #a68f7f;
-  }
-  
-  input[type="reset"] {
-    display: inline-block;
-    color: #a68f7f;
-    border: 0.4rem #dedbcd double;
-    border-radius: 0.4rem;
-    height: 5rem;
-    width: 15rem;
-    outline-width: 0rem;
-    font-size: 1.2rem;
-    font-family: "Nunito", sans-serif;
-    box-shadow: 0.5rem 0.5rem 0.5em #a68f7f;
-  }
+  display: inline-block;
+  color: #a68f7f;
+  border: 0.4rem #dedbcd double;
+  border-radius: 0.4rem;
+  height: 5rem;
+  width: 15rem;
+  font-size: 1.2rem;
+  outline-width: 0rem;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0.5rem #a68f7f;
+}
 
-  #buttons {
-    text-align: center;
-  }
+input[type="reset"] {
+  display: inline-block;
+  color: #a68f7f;
+  border: 0.4rem #dedbcd double;
+  border-radius: 0.4rem;
+  height: 5rem;
+  width: 15rem;
+  outline-width: 0rem;
+  font-size: 1.2rem;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0.5em #a68f7f;
+}
 
-  #endform {
-    font-family: "Nunito", sans-serif;
-    font-size: 1.5rem;
-  }
+#buttons {
+  text-align: center;
+}
 
-  
-  #teamph {
-    text-align: center;
-  }
-  
-  .aboutimg{
-    display: inline-block;
-    width: 21,5rem;
-    height: 30rem;
+#endform {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+}
 
-  }
+
+#teamph {
+  text-align: center;
+}
+
+.aboutimg {
+  display: inline-block;
+  width: 21, 5rem;
+  height: 30rem;
+
+}
+
+.adopthome img{
+  height: 15rem;
+  display: block;
+  margin: auto;
+  padding: 0rem;
+}
+
+.adopthome a{
+  color:#a68f7f;
+}
+
+.adopthome a:visited{
+  color: #6b7e4e;
+}
+
+.adopthome a:hover{
+  color: #6b7e4e;
+}
+
+#cancelimage {
+  height: 20rem;
+  width: 30rem;
+  display: block;
+  margin: auto;
+}
 

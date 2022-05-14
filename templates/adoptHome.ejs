@@ -10,38 +10,6 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<script>
-    window.onsubmit = confirmation;
-
-    function confirmation() {
-        let valuesProvided = "";
-        let pfp = document.getElementById("phoneFirstPart").value;
-        let psp = document.getElementById("phoneSecondPart").value;
-        let ptp = document.getElementById("phoneThirdPart").value;
-
-        if (pfp.length != 3 || String(parseInt(pfp)) !== pfp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        } else if (psp.length != 3 || String(parseInt(psp)) !== psp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        } else if (ptp.length != 4 || String(parseInt(ptp)) !== ptp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        }
-
-        if (valuesProvided !== "") {
-            alert(valuesProvided);
-            return false;
-        } else {
-            valuesProvided = "Please make sure all your information is correct!\n"
-            valuesProvided += "Incorrect or incomplete information will jeopardize your chances at being able to adopt."
-            if (window.confirm(valuesProvided)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-</script>
-
 
 <body>
     <div id="nav">
@@ -55,12 +23,16 @@
         </ul>
     </div>
     <hr>
-    <br>
-
-    <img id="adoptform" src="adoptdog.jpeg" alt="adoptmedogs">
     <h2>Select an Option</h2>
-    <h3><a href="/adopt">ADOPT A DOG</a></h3>
-    <h3><a href="/cancel">CANCEL ADOPTION</a></h3>
+    <div class = "adopthome">
+        <img src="adoptdog.jpeg" alt="adoptmedogs">
+        <h3><a href="/adopt">ADOPT A DOG</a></h3>
+    </div>
+    <br>
+    <div class = "adopthome">
+        <img src="adoptmewhitedog.jpeg" alt="adoptmedogs">
+        <h3><a href="/cancel">CANCEL ADOPTION</a></h3>
+    </div>
 </body>
 
 </html>

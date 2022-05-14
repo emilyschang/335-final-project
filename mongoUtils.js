@@ -1,3 +1,8 @@
+/**
+ * MONGO UTILS
+ * Contains functions that help us interact with the mongo database
+ */
+
 let path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, '.env') })
 

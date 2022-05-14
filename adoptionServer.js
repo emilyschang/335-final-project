@@ -1,6 +1,10 @@
-// this is the main file that should be run
-// USAGE
-// node adoptionServer.js port_number
+/**
+ * SERVER
+ * This is the main file that should be run
+ * 
+ * USAGE
+ * node adoptionServer.js port_number
+ */ 
 let fs = require('fs');
 let http = require('http');
 let path = require("path");

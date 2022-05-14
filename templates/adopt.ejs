@@ -11,6 +11,39 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
+<script>
+    window.onsubmit = confirmation;
+
+    function confirmation() {
+        let valuesProvided = "";
+        let pfp = document.getElementById("phoneFirstPart").value;
+        let psp = document.getElementById("phoneSecondPart").value;
+        let ptp = document.getElementById("phoneThirdPart").value;
+
+        if (pfp.length != 3 || String(parseInt(pfp)) !== pfp) {
+            valuesProvided += "Invalid phone number! Please fix!\n";
+        } else if (psp.length != 3 || String(parseInt(psp)) !== psp) {
+            valuesProvided += "Invalid phone number! Please fix!\n";
+        } else if (ptp.length != 4 || String(parseInt(ptp)) !== ptp) {
+            valuesProvided += "Invalid phone number! Please fix!\n";
+        }
+
+        if (valuesProvided !== "") {
+            alert(valuesProvided);
+            return false;
+        } else {
+            valuesProvided = "Please make sure all your information is correct!\n"
+            valuesProvided += "Incorrect or incomplete information will jeopardize your chances at being able to adopt."
+            if (window.confirm(valuesProvided)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+</script>
+
+
 <body>
 	<div id="nav">
         <h1>ADOPT A DOG</h1>

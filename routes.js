@@ -22,6 +22,11 @@ module.exports = function (app, portNumber) {
         response.render("index");
     });
 
+    //about
+    app.get("/about", function (request, response) {
+        response.render("about");
+    });
+
     // adopt page
     app.get("/adopt", function (request, response) {
         let variables = {

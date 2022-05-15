@@ -79,11 +79,11 @@ module.exports = function (app, portNumber) {
             // render profile not found page
             response.render("profileNotFound", { email: email });
         } else {
-            /* update profile with a new dog
-            let dogImg = await dogApi.getRandomDog();
-            await mongoUtils.update(email, { dogImg: dogImg });*/
+            //update profile with a new dog
+            //let dogImg = await dogApi.getRandomDog();
+            //await mongoUtils.update(email, { dogImg: dogImg });
 
-            //result = await mongoUtils.lookup(email);
+            result = await mongoUtils.lookup(email);
 
             // get the updated values
             let variables = {

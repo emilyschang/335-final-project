@@ -1,0 +1,1 @@
+web: node .\adoptionServer.js 5000

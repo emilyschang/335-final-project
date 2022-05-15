@@ -1,62 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Cancel Adoption</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Cancel Adoption</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<script>
-    window.onsubmit = confirmation;
-
-    function confirmation() {
-        let valuesProvided = "";
-
-        valuesProvided = "Are you sure you want to cancel your adoption?\n"
-        valuesProvided += "WARNING: This action cannot be undone."
-
-        if (window.confirm(valuesProvided)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>
-
-<body>
-    <div id="nav">
-        <h1>Adopt a Dog</h1>
-
-        <ul>
-            <li><a href="status">STATUS</a></li>
-            <li><a href="/adoptHome">ADOPT</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li><a href="/">HOME</a></li>
-        </ul>
-    </div>
-    <hr>
-    <br>
-
-    <h3>Cancel Adoption</h3>
-    <img id = "cancelimage" src="adoptmewhitedog.jpeg" alt="adoptmedogs">
-    <form action="/cancelConfirm" method="POST">
-        <fieldset>
-            <legend>Cancel by Email</legend>
-            <label><strong>Email: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label>
-            <br>
-        </fieldset>
-        <br><br><br>
-        <div id="buttons">
-            <input class="butt" type="submit" value="Confirm Cancellation" />
-            &nbsp;&nbsp;
-            <input class="butt" type="reset" value="Clear" />
+    <body>
+        <div id="nav">
+            <h1>Adopt a Dog</h1>
+            <ul>
+                <li><a href="status">STATUS</a></li>
+                <li><a href="/adoptHome">ADOPT</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/">HOME</a></li>
+            </ul>
         </div>
-    </form>
+        <hr><br>
 
-</body>
+        <h3>Cancel Adoption Application</h3>
+        <img id="cancel-img" src="images/adopt-me-dog2.jpeg" alt="dog with 'Adopt me! sign">
+        <form action="/cancelConfirm" method="POST">
+            <fieldset>
+                <legend>Cancel by Email</legend>
+                <label><strong>Email: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label>
+                <br>
+            </fieldset>
+            <br><br><br>
+            <div id="buttons">
+                <input class="butt" type="submit" value="Cancel Application"/>&nbsp;&nbsp;
+                <input class="butt" type="reset" value="Clear"/>
+            </div>
+        </form>
 
+        <script>
+            window.onsubmit = confirmation;
+    
+            function confirmation() {
+                let valuesProvided = "";
+    
+                valuesProvided = "Are you sure you want to cancel your adoption application?\n"
+                valuesProvided += "ATTENTION: This action cannot be undone."
+    
+                if (window.confirm(valuesProvided)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
 </html>

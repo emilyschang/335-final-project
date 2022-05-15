@@ -1,43 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Status Check</title>
+		<link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"rel="stylesheet"/>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<title>Adoption Form</title>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"
-		rel="stylesheet" />
-	<link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-	<div id="nav">
-		<h1>Adopt a Dog</h1>
-
-		<ul>
-			<li><a href="status">STATUS</a></li>
-			<li><a href="/adoptHome">ADOPT</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/">HOME</a></li>
-		</ul>
-	</div>
-	<hr>
-	<br>
-
-	<h3>Check Adoption Status</h3>
-	<form action="/profile" method="POST">
-		<fieldset>
-			<legend>Lookup by email</legend>
-			<label><strong>Email: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label>
-		</fieldset>
-		<br><br><br>
-		<div id="buttons">
-			<input class="butt" type="submit" value="Submit Application" />
-			&nbsp;&nbsp;
-			<input class="butt" type="reset" value="Clear" />
+	<body>
+		<div id="nav">
+			<h1>Adopt a Dog</h1>
+			<ul>
+				<li><a href="status">STATUS</a></li>
+				<li><a href="/adoptHome">ADOPT</a></li>
+				<li><a href="/about">ABOUT</a></li>
+				<li><a href="/">HOME</a></li>
+			</ul>
 		</div>
-	</form>
+		<hr><br>
 
-</body>
+		<h3>Check Adoption Application Status</h3>
+		<form action="/profile" method="POST">
+			<fieldset>
+				<legend>Lookup by email</legend>
+				<label><strong>Email: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label>
+			</fieldset>
+			<br><br><br>
 
+			<div id="buttons">
+				<input class="butt" type="submit" value="Check Status"/> &nbsp;&nbsp;
+				<input class="butt" type="reset" value="Clear"/>
+			</div>
+		</form>
+	</body>
 </html>

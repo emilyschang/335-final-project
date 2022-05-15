@@ -1,30 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Your Profile</title>
+		<link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<title>Your Profile</title>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"
-		rel="stylesheet" />
-	<link rel="stylesheet" href="style.css" />
-</head>
+	<body>
+		<div id="nav">
+			<h1>Adopt a Dog</h1>
+			<ul>
+				<li><a href="status">STATUS</a></li>
+				<li><a href="/adoptHome">ADOPT</a></li>
+				<li><a href="/about">ABOUT</a></li>
+				<li><a href="/">HOME</a></li>
+			</ul>
+		</div>
+		<hr><br>
+		<h3>Your Profile</h3>
 
-<body>
-	<div id="nav">
-		<h1>Adopt a Dog</h1>
+		<p>
+			<strong>Name: </strong><%- fname %> <%- lname %><br><br>
+			<strong>Email Address: </strong><%- email %><br><br>
+			<strong>Phone: </strong> <%- phoneFirstPart %>-<%- phoneSecondPart %>-<%- phoneThirdPart %><br><br>
+			<strong>State: </strong><%- state %><br><br>
+			<strong>Why are you best suited to be a dog owner? </strong><br>
+			<%- background %><br><br>
+			<strong>Status: </strong>Approved <br><br>
+			<strong><span id="your-dog">Meet <%-dname %>!</span><img id="your-dog-img" src="<%- dogImg %>">I can't wait to meet you!</strong>
+		</p>
 
-		<ul>
-			<li><a href="status">STATUS</a></li>
-			<li><a href="/adoptHome">ADOPT</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/">HOME</a></li>
-		</ul>
-	</div>
-	<hr>
-	<br>
-	<h3>YOUR PROFILE</h3>
-
-</body>
-
+		<div id="footer">
+		</div>
+	</body>
 </html>

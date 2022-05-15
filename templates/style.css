@@ -6,7 +6,7 @@ body {
   background-color: #dedbcd;
 }
 
-
+/* NAV BAR */
 #nav {
   background-color: #dedbcd;
   padding-right: 1.5rem;
@@ -47,14 +47,94 @@ body {
   color: #a68f7f;
 }
 
+/* WELCOME PAGE */
+#desc-outer {
+  margin: 0 20em 5em 20em;
+}
+
+.desc {
+  text-align: left;
+}
+
+/* ABOUT PAGE */
+#team {
+  text-align: center;
+}
+
+.headshot {
+  display: inline-block;
+}
+
+.name {
+  margin: 0;
+  font-family: "Bayon", sans-serif;
+  color: #6b7e4e;
+  font-size: 2.3em;
+}
+
+.about-img {
+  display: inline-block;
+  width: 21, 5rem;
+  height: 30rem;
+  margin: 5px;
+}
+
+/* ADOPT PAGE */
+#adopt-dog-img {
+  height: 15rem;
+  display: block;
+  margin: auto;
+  padding: 0rem;
+}
+
+.adopt-home img {
+  height: 15rem;
+  display: block;
+  margin: auto;
+  padding: 0rem;
+}
+
+.adopt-home a {
+  color:#a68f7f;
+}
+
+.adopt-home a:visited {
+  color: #6b7e4e;
+}
+
+.adopt-home a:hover {
+  color: #6b7e4e;
+}
+
+/* CANCEL PAGE */
+#cancel-img {
+  height: 20rem;
+  width: 30rem;
+  display: block;
+  margin: auto;
+}
+
+/* PROFILE/STATUS CHECK PAGE */
+#your-dog {
+  font-family: "Bayon", sans-serif;
+  font-size: 1.5em;
+  color: #6b7e4e;
+}
+
+#your-dog-img {
+  margin-bottom: 0.5em;
+}
+
+/* MULTIPLE PAGES */
 #outer {
   display: block;
   position: relative;
+  padding: 1em 0;
 }
 
 #outer::before {
   content: "";
-  background: url(paws.jpg);
+  background: url(images/paws.jpg);
   opacity: 0.09;
   top: -1rem;
   left: 0;
@@ -67,26 +147,18 @@ hr {
   border-top: 0.2rem solid black;
 }
 
+p {
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
 h2 {
   text-align: center;
   font-family: "Bayon", sans-serif;
-  /* font-family: 'Nunito', sans-serif; */
   font-size: 3.5rem;
   font-weight: lighter;
-}
-
-img {
-  display: block;
-  margin: auto;
-  height: 30rem;
-  opacity: 0.9;
-}
-
-#adoptform {
-  height: 15rem;
-  display: block;
-  margin: auto;
-  padding: 0rem;
 }
 
 h3 {
@@ -97,11 +169,12 @@ h3 {
   margin: 0rem;
 }
 
-p {
-  font-family: "Nunito", sans-serif;
-  font-size: 2rem;
-  font-weight: lighter;
-  text-align: center;
+img {
+  display: block;
+  margin: auto;
+  height: 30rem;
+  opacity: 0.9;
+  border-radius: 15px;
 }
 
 #footer {
@@ -121,7 +194,7 @@ fieldset {
   color: black;
 }
 
-#phnum input[type="text"] {
+#phone-num input[type="text"] {
   width: 2.8em;
 }
 
@@ -167,46 +240,7 @@ input[type="reset"] {
   text-align: center;
 }
 
-#endform {
+#end-form {
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
 }
-
-
-#teamph {
-  text-align: center;
-}
-
-.aboutimg {
-  display: inline-block;
-  width: 21, 5rem;
-  height: 30rem;
-
-}
-
-.adopthome img{
-  height: 15rem;
-  display: block;
-  margin: auto;
-  padding: 0rem;
-}
-
-.adopthome a{
-  color:#a68f7f;
-}
-
-.adopthome a:visited{
-  color: #6b7e4e;
-}
-
-.adopthome a:hover{
-  color: #6b7e4e;
-}
-
-#cancelimage {
-  height: 20rem;
-  width: 30rem;
-  display: block;
-  margin: auto;
-}
-

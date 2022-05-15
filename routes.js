@@ -42,7 +42,7 @@ module.exports = function (app, portNumber) {
 
     app.use(bodyParser.urlencoded({ extended: false }));
 
-    app.post("/processAdopt", function (request, response) {
+    app.post("/processAdopt", async function (request, response) {
         let {
             fname, lname, email,
             phoneFirstPart, phoneSecondPart, phoneThirdPart,
@@ -57,6 +57,7 @@ module.exports = function (app, portNumber) {
             state: state,
             dname: dname,
             background: background,
+            dogImg: await dogApi.getRandomDog(),
             datetime: new Date()
         }
         mongoUtils.insert(variables);
@@ -73,19 +74,33 @@ module.exports = function (app, portNumber) {
         let email = request.body.email;
 
         // check if entry exists
-        let variables = await mongoUtils.lookup(email);
-        if (variables == null) { // variables == null
+        let result = await mongoUtils.lookup(email);
+        if (result == null) { // variables == null
             // render profile not found page
             response.render("profileNotFound", { email: email });
         } else {
-            // update profile with a new dog
+            /* update profile with a new dog
             let dogImg = await dogApi.getRandomDog();
-            await mongoUtils.update(email, { dogImg: dogImg });
+            await mongoUtils.update(email, { dogImg: dogImg });*/
+
+            //result = await mongoUtils.lookup(email);
 
             // get the updated values
-            let variables = await mongoUtils.lookup(email);
+            let variables = {
+                fname: result.fname,
+                lname: result.lname,
+                email: result.email,
+                phoneFirstPart: result.phoneFirstPart,
+                phoneSecondPart: result.phoneSecondPart,
+                phoneThirdPart: result.phoneThirdPart,
+                state: result.state,
+                dname: result.dname,
+                background: result.background,
+                datetime: new Date(),
+                dogImg: result.dogImg
+            }
             console.log(variables);
-            response.render("profile");
+            response.render("profile", variables);
         }
     });
 

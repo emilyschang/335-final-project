@@ -1,109 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Adoption Form</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </head>
 
-<head>
-	<meta charset="utf-8" />
-	<title>Adoption Form</title>
-	<link
-      href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato&family=Nunito:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-</head>
+    <body>
+        <div id="nav">
+            <h1>Adopt a Dog</h1>
+            <ul>
+                <li><a href="status">STATUS</a></li>
+                <li><a href="/adoptHome">ADOPT</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/">HOME</a></li>    
+            </ul>
+        </div>
 
-<script>
-    window.onsubmit = confirmation;
+        <hr><br>
+        
+        <img id="adopt-dog-img" src="images/adopt-me-dog.jpeg" alt="dog with 'Adopt me!' sign"><br>
+        
+        <h3>Adoption Application Form</h3>
+        <form action="<%- urlForm %>" method="post">
+            <!-- PERSONAL INFO-->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label><strong>First Name: </strong>&nbsp;<input type="text" name="fname" required/></label>&nbsp;&nbsp;
+                <label><strong>Last Name: </strong>&nbsp;<input type="text" name="lname" required/></label>
+                <br><br>
+                <label><strong>Email Address: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label> 
+                <br><br>
+                <span id="phone-num">
+                    <strong>Phone:</strong>&nbsp;&nbsp;
+                    <input type="text" id="phoneFirstPart" name="phoneFirstPart" maxlength="3" size="3" required/> - 
+                    <input type="text" id="phoneSecondPart" name="phoneSecondPart" maxlength="3" size="3" required/> - 
+                    <input type="text" id="phoneThirdPart" name="phoneThirdPart" maxlength="4" size="4" required/>
+                </span>
+                <br><br>
+                <label><strong>State: </strong>&nbsp;&nbsp;<input type="text" name="state" required></label> 
+                <br>
+            </fieldset>
+            <br>
 
-    function confirmation() {
-        let valuesProvided = "";
-        let pfp = document.getElementById("phoneFirstPart").value;
-        let psp = document.getElementById("phoneSecondPart").value;
-        let ptp = document.getElementById("phoneThirdPart").value;
+            <!-- ADDITIONAL INFO-->
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label><strong>Potential Dog Name: </strong><input type="text" name="dname" required/></label>
+                <br>
+                <br>
+                <strong>Why are you best suited to be a dog owner?</strong><br>
+                <textarea rows="10" cols="80" name="background"></textarea></label>
+            </fieldset>
+            <br><br><br>
 
-        if (pfp.length != 3 || String(parseInt(pfp)) !== pfp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        } else if (psp.length != 3 || String(parseInt(psp)) !== psp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        } else if (ptp.length != 4 || String(parseInt(ptp)) !== ptp) {
-            valuesProvided += "Invalid phone number! Please fix!\n";
-        }
+            <div id ="buttons">
+                <input class = "butt" type="submit" value="Submit Application"/>&nbsp;&nbsp;
+                <input class="butt" type="reset" value="Clear"/>
+            </div>
+            <br><br><br>
+        </form>
 
-        if (valuesProvided !== "") {
-            alert(valuesProvided);
-            return false;
-        } else {
-            valuesProvided = "Please make sure all your information is correct!\n"
-            valuesProvided += "Incorrect or incomplete information will jeopardize your chances at being able to adopt."
-            if (window.confirm(valuesProvided)) {
-                return true;
-            } else {
-                return false;
+        <div id="footer">
+        </div>
+
+        <script>
+            window.onsubmit = confirmation;
+    
+            function confirmation() {
+                let valuesProvided = "";
+                let pfp = document.getElementById("phoneFirstPart").value;
+                let psp = document.getElementById("phoneSecondPart").value;
+                let ptp = document.getElementById("phoneThirdPart").value;
+    
+                if (pfp.length != 3 || String(parseInt(pfp)) !== pfp) {
+                    valuesProvided += "Invalid phone number! Please fix!\n";
+                } else if (psp.length != 3 || String(parseInt(psp)) !== psp) {
+                    valuesProvided += "Invalid phone number! Please fix!\n";
+                } else if (ptp.length != 4 || String(parseInt(ptp)) !== ptp) {
+                    valuesProvided += "Invalid phone number! Please fix!\n";
+                }
+    
+                if (valuesProvided !== "") {
+                    alert(valuesProvided);
+                    return false;
+                } else {
+                    valuesProvided = "Please ensure that all information is correct!\n"
+                    valuesProvided += "Incorrect or incomplete information will jeopardize your adoption application approval."
+                    if (window.confirm(valuesProvided)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
             }
-        }
-    }
-</script>
-
-
-<body>
-	<div id="nav">
-        <h1>ADOPT A DOG</h1>
-        
-        <ul>
-            <li><a href="status">STATUS</a></li>
-            <li><a href="/adoptHome">ADOPT</a></li>
-            <li><a href="/about">ABOUT</a></li>
-            <li><a href="/">HOME</a></li>    
-        </ul>
-    </div>
-    <hr>
-	<br>
-	
-	<img id="adoptform" src="adoptdog.jpeg" alt="adoptmedogs">
-	
-	<h3>Apply to Adopt</h3>
-	<form action=<%- urlForm %> method="post">
-		<fieldset>
-			<legend>Personal Information</legend>
-			<label><strong>First Name: </strong>&nbsp;<input type="text" name="fname" required/></label>&nbsp;&nbsp;
-			<label><strong>Last Name: </strong>&nbsp;<input type="text" name="lname" required/></label>
-			<br>
-			<br>
-			<label><strong>Email Address: </strong>&nbsp;&nbsp;<input type="email" name="email" required></label> 
-			<br>
-			<br>
-			<span id="phnum">
-
-                <strong>Phone:</strong>&nbsp;&nbsp;<input type="text" id="phoneFirstPart" name="phoneFirstPart" required maxlength="3" />
-                - <input type="text" id="phoneSecondPart" name="phoneSecondPart" required maxlength="3" />
-                - <input type="text" id="phoneThirdPart" name="phoneThirdPart" required maxlength="4" />
-
-            </span>
-			<br>
-			<br>
-			<label><strong>State: </strong>&nbsp;&nbsp;<input type="text" name="state" required></label> 
-			<br>
-		</fieldset>
-		<br>
-		<fieldset>
-			<legend>Additional Information</legend>
-			<label><strong>Potential Dog Name: </strong><input type="text" name="dname" required/></label>
-			<br>
-			<br>
-			<strong>Why are you best suited to be a dog owner?</strong><br>
-			<textarea rows="15" cols="80" name="background"></textarea></label>
-		</fieldset>
-		<br><br><br>
-		<div id ="buttons">
-		<input class = "butt" type="submit" value="Submit Application"/>
-		&nbsp;&nbsp;
-		<input class="butt" type="reset" value="Clear"/>
-		</div>
-		<br><br><br>
-		<div id="footer">
-        
-		</div>
-		
-	</form>
-</body>
-
+        </script>
+    </body>
 </html>

@@ -74,11 +74,11 @@
                 let psp = document.getElementById("phoneSecondPart").value;
                 let ptp = document.getElementById("phoneThirdPart").value;
     
-                if (pfp.length != 3 || String(parseInt(pfp)) !== pfp) {
+                if (pfp.length != 3 || (String(parseInt(pfp)) !== pfp && isNaN(pfp))) {
                     valuesProvided += "Invalid phone number! Please fix!\n";
-                } else if (psp.length != 3 || String(parseInt(psp)) !== psp) {
+                } else if (psp.length != 3 || (String(parseInt(psp)) !== psp && isNaN(psp))) {
                     valuesProvided += "Invalid phone number! Please fix!\n";
-                } else if (ptp.length != 4 || String(parseInt(ptp)) !== ptp) {
+                } else if (ptp.length != 4 || (String(parseInt(ptp)) !== ptp && isNaN(ptp))) {
                     valuesProvided += "Invalid phone number! Please fix!\n";
                 }
     

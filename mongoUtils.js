@@ -15,7 +15,7 @@ const collection = process.env.MONGO_COLLECTION;
 
 // initialize the database collection
 const databaseAndCollection = { db, collection };
-const uri = `mongodb+srv://${username}:${password}@cluster0.pugjz.mongodb.net/${db}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${username}:${password}@cluster0.rm5sq.mongodb.net/${db}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 // inserts a single element ("data") into the database defined by databaseAndCollection

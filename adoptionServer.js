@@ -26,7 +26,7 @@ require('./routes.js')(app, portNumber); // the routes have been moved to anothe
 
 // run the server
 console.log(`Web server started and running at http://localhost:${portNumber}`);
-http.createServer(app).listen(portNumber);
+http.createServer(app).listen(process.env.PORT || portNumber);
 
 // terminates the server when stop is typed into the command line
 let prompt = "Stop to shutdown the server: ";

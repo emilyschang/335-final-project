@@ -34,7 +34,7 @@ module.exports = function (app, portNumber) {
 
     // adopt page
     app.get("/adopt", function (request, response) {
-        response.render("adopt", variables);
+        response.render("adopt");
     });
 
     app.use(bodyParser.urlencoded({ extended: false }));

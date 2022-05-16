@@ -34,9 +34,6 @@ module.exports = function (app, portNumber) {
 
     // adopt page
     app.get("/adopt", function (request, response) {
-        let variables = {
-            urlForm: "http://localhost:" + portNumber + "/processAdopt"
-        }
         response.render("adopt", variables);
     });
 

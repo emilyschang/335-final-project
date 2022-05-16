@@ -1,1 +1,1 @@
-web: node .\adoptionServer.js 5000
+web:npm start

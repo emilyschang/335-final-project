@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node adoptionServer.js 5000"
   },
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emilyschang/335-final-project.git"
